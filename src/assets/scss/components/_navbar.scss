@@ -2,9 +2,12 @@ $-color-dark: #0C1427;
 $-color: #7987a1;
 $-color-hover: #6571FF;
 
+
+
 .navbar {
   background-color: $-color-dark;
   border: 1px solid #17223F;
+
 
   .omni  {
     font-weight: 900;
@@ -31,6 +34,10 @@ $-color-hover: #6571FF;
   };
 }
 
+.content {
+  background-color: gray;
+  border: 1px solid #17223F;
+}
 
 
 

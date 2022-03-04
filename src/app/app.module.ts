@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CoreModules } from './core/core.module';
 import { FeatureModules } from './features/churches/components/features.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     FeatureModules,
     BrowserAnimationsModule,
     DashboardModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
