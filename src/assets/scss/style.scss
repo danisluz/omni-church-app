@@ -1,0 +1,12 @@
+// imports bootstrap
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+  *{font-family: 'Manrope', sans-serif; }
+
+@import "./components/navbar.scss";

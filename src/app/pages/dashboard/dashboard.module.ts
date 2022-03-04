@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './Components/navbar/navbar.component';
+import { DashboardComponent } from './dashboard.component';
+
 
 @NgModule({
   imports: [
@@ -9,11 +10,11 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     RouterModule,
   ],
   declarations: [
-    NavbarComponent,
+    DashboardComponent,
 
   ],
   exports: [
-    NavbarComponent
+    DashboardComponent
   ]
 })
-export class CoreModules { }
+export class DashboardModule { }

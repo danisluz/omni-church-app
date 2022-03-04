@@ -1,0 +1,36 @@
+$-color-dark: #0C1427;
+$-color: #7987a1;
+$-color-hover: #6571FF;
+
+.navbar {
+  background-color: $-color-dark;
+  border: 1px solid #17223F;
+
+  .omni  {
+    font-weight: 900;
+    color: #d0d6e1;
+  }
+
+  .church  {
+  font-weight: 200;
+  color: $-color-hover;
+  }
+
+  .color {
+  color: $-color;
+  &:hover {
+    color: $-color-hover;
+  }
+  }
+
+  ul span {
+    color: $-color;
+    &:hover {
+      color: $-color-hover;
+    }
+  };
+}
+
+
+
+

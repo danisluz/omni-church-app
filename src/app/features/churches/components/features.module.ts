@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ChurchReadComponent } from './church-read/church-read.component';
+
 
 @NgModule({
   imports: [
@@ -9,11 +10,10 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     RouterModule,
   ],
   declarations: [
-    NavbarComponent,
-
+    ChurchReadComponent
   ],
   exports: [
-    NavbarComponent
+    ChurchReadComponent
   ]
 })
-export class CoreModules { }
+export class FeatureModules { }
