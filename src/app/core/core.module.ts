@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SidebarComponent } from './Components/sidebar/sidebar.component';
-import { FooterComponent } from './Components/footer/footer.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 
 @NgModule({
@@ -11,12 +10,11 @@ import { FooterComponent } from './Components/footer/footer.component';
     RouterModule,
   ],
   declarations: [
-    SidebarComponent,
-    FooterComponent,
+    NavbarComponent
+
   ],
   exports: [
-    SidebarComponent,
-    FooterComponent,
+    NavbarComponent
   ]
 })
 export class CoreModules { }
