@@ -1,49 +1,58 @@
-<div class="row">
-  <div class="col-sm-3 navbar">
+<div id="wrapper">
+  <nav class="navbar navbar-default navbar-cls-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Omni<span>Church</span></a>
+    </div>
+    <div>
+      <button href="#" type="button" class="btn btn-dark">Sair</button>
+    </div>
+  </nav>
+  <!-- /. NAV TOP  -->
 
-    <a routerLink="/" class="sidebar-toggler">
-      <title class="omni">Omni</title>
-      <title class="church">Church</title>
-    </a>
+  <!-- NAV SIDE  -->
+  <nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+      <ul class="nav flex-column m-4" id="menu">
+        <li class="nav-item" >
+          <a routerLink="/" class="nav-link align-middle px-0">
+            <i class="fs-6 bi-house"></i>
+            <span class="ms-1 d-none d-sm-inline">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-0 align-middle">
+              <i class="fs-6 bi-people"></i>
+              <span class="ms-1 d-none d-sm-inline">Membros</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-0 align-middle">
+            <i class="fs-6 bi-building"></i>
+            <span class="ms-1 d-none d-sm-inline">Congregações</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-0 align-middle">
+            <i class="fs-6 bi-flag"></i>
+            <span class="ms-1 d-none d-sm-inline">Setores</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/churches" class="nav-link px-0 align-middle">
+            <i class="fs-6 bi-flag"></i>
+            <span class="ms-1 d-none d-sm-inline">Igrejas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /. NAV SIDE  -->
 
-    <ul class="nav" id="menu">
-      <li class="nav-item">
-        <a routerLink="/" class="nav-link align-middle px-0 color">
-          <i class="fs-6 bi-house"></i>
-          <span class="ms-1 d-none d-sm-inline">Home</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-0 align-middle color">
-            <i class="fs-6 bi-people"></i>
-            <span class="ms-1 d-none d-sm-inline">Membros</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-0 align-middle color">
-          <i class="fs-6 bi-building"></i>
-          <span class="ms-1 d-none d-sm-inline">Congregações</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-0 align-middle color">
-          <i class="fs-6 bi-flag"></i>
-          <span class="ms-1 d-none d-sm-inline">Setores</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/churches" class="nav-link px-0 align-middle color">
-          <i class="fs-6 bi-flag"></i>
-          <span class="ms-1 d-none d-sm-inline">Igrejas</span>
-        </a>
-      </li>
-    </ul>
-
-  </div>
-  <div class="col-sm-9 content">
-    <router-outlet></router-outlet>
+  <!-- PAGE WRAPPER  -->
+  <div class="wrapper" id="page-wrapper">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
-
-
-
+<!-- /. PAGE WRAPPER  -->
