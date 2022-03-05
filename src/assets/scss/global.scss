@@ -1,0 +1,15 @@
+@use "./components/navbar";
+@use "./components/dashboard";
+@use "./components/churches";
+@use "./components/header";
+
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+  *{font-family: 'Manrope', sans-serif; }
+
+
+
+
+

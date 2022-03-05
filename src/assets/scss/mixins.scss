@@ -1,0 +1,16 @@
+@mixin flex($justify-content, $align-items, $flex-direction) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+};
+
+@mixin button-black() {
+  padding: 3px 20px;
+  color: #7886A0;
+  background-color: $bg-content-color;
+  &:hover {
+    color: #080C18;
+    background-color: #666FF7;
+  }
+}

@@ -4,8 +4,13 @@ import { ChurchReadComponent } from './features/churches/components/church-read/
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: "", component: DashboardComponent},
-  { path: "churches", component: ChurchReadComponent},
+  { path: "", component: DashboardComponent },
+
+  { path: "churches", component: ChurchReadComponent,
+    children: [
+      { path: 'create', component: ChurchReadComponent }
+    ]
+  },
 ];
 
 @NgModule({
