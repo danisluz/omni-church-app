@@ -27,11 +27,21 @@ body { margin: 0; }
   padding: 50px 15px;
   z-index: 1;
   background: $bg-content-color;
-  margin-left: 260px;
+  //margin-left: 260px;
   width: -webkit-fill-available;
 }
 
+@media (min-width: 200px) {
+  .content-wrapper {
+    margin-left: 60px;
+  }
+}
 
+@media (min-width: 1024px) {
+  .content-wrapper {
+    margin-left: 260px;
+  }
+}
 
 
 
