@@ -16,6 +16,7 @@ body { margin: 0; }
   width: 100%;
   background: $nav-color;
   height: 100%;
+  margin-top: -50px;
 }
 
 .content-wrapper {
@@ -27,7 +28,10 @@ body { margin: 0; }
   z-index: 1;
   background: $bg-content-color;
   margin-left: 260px;
+  width: -webkit-fill-available;
 }
+
+
 
 
 
