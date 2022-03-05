@@ -3,11 +3,25 @@
 @use "./components/churches";
 @use "./components/header";
 
+@import 'vars';
+@import 'mixins';
+
 
 html, body { height: 100%; }
 body { margin: 0; }
 
-  *{font-family: 'Manrope', sans-serif; }
+*{font-family: 'Manrope', sans-serif; }
+
+.content-wrapper {
+  position: absolute;
+  height: 100%;
+  top: -50px;
+  margin-top: 50px;
+  padding: 50px 15px;
+  z-index: 1;
+  background: $bg-content-color;
+  margin-left: 260px;
+}
 
 
 
