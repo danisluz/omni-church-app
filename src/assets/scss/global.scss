@@ -12,6 +12,12 @@ body { margin: 0; }
 
 *{font-family: 'Manrope', sans-serif; }
 
+#wrapper {
+  width: 100%;
+  background: $nav-color;
+  height: 100%;
+}
+
 .content-wrapper {
   position: absolute;
   height: 100%;
