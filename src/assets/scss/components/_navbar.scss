@@ -1,10 +1,12 @@
 @import '../vars';
+@import '../mixins';
 
 .content {
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: #CED4DF;
   padding:25px;
   margin-top: 15px;
+  border: solid 1px #7886A0;
 }
 
 .color-txt-bt {
@@ -34,6 +36,7 @@
   margin-top: 50px;
   padding-top: 50px;
   height: 100%;
+  border-right: solid 1px $nav-border;
 }
 
 
