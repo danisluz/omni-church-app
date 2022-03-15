@@ -14,3 +14,19 @@
     background-color: #666FF7;
   }
 }
+
+@mixin button-light() {
+  padding: 3px 20px;
+  color: $color-700;
+  background-color: $color-100;
+  border: 1px solid $color-200;
+  &:hover {
+    color: $color-100;
+    background-color: $color-300;
+    border: 1px solid transparent;
+  }
+  &:focus {
+    border: 1px solid transparent;
+    background-color: $color-700;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../vars';
+@import '../mixins';
+
+.table {
+  a {
+    display: inline;
+  }
+
+  .edit {
+    &:hover {
+      color: $color-300;
+    }
+  }
+  .delete {
+    &:hover {
+      color: $color-danger;
+    }
+  }
+}
+
+.btn-dark {
+  @include button-light;
+}
