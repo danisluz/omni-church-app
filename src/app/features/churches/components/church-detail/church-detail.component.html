@@ -12,12 +12,12 @@
   </thead>
   <tbody>
 
-  <tr *ngFor="let row of churches; let i = index">
-    <th scope="row">{{ row.id }}</th>
-    <td scope="row">{{ row.name }}</td>
-    <td scope="row">{{ row.cnpj }}</td>
-    <td scope="row">{{ row.phone }}</td>
-    <td scope="row">{{ row.city }}</td>
+  <tr>
+    <th scope="row">{{ church.id }}</th>
+    <td scope="row">{{ church.name }}</td>
+    <td scope="row">{{ church.cnpj }}</td>
+    <td scope="row">{{ church.phone }}</td>
+    <td scope="row">{{ church.city }}</td>
     <td scope="row">
       <a class="btn edit" href="#"><i class="bi bi-pencil-square"></i></a>
   </td>
@@ -25,4 +25,4 @@
   </tbody>
 </table>
 
-<button href="#" type="button" class="btn btn-dark">Criar nova igreja</button>
+<button href="#" type="button" class="btn btn-dark">Editar</button>

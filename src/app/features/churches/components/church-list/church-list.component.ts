@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ChurchesService } from '../../church.service';
-import { Churches } from '../churches.model';
+import { Church } from '../church.model';
 
 @Component({
   selector: 'app-church-read',
-  templateUrl: './church-read.component.html',
+  templateUrl: './church-list.component.html',
 })
-export class ChurchReadComponent implements OnInit {
-  churches: Churches[] = [];
+export class ChurchListComponent implements OnInit {
+  churches: Church[] = [];
   displayedColumns = ['id', 'name', 'cnpj', 'phone', 'city'];
 
   constructor(private churcheService: ChurchesService) {}
@@ -17,16 +17,9 @@ export class ChurchReadComponent implements OnInit {
   }
 
   churchesInitialize(): void {
-    this.churcheService.read().subscribe((churches) => {
+    this.churcheService.list().subscribe((churches) => {
       this.churches = churches;
       //console.log(churches)
-    });
-  }
-
-  deleteChurch(id: number): void {
-    console.log('Delete', id);
-    this.churcheService.delete(id).subscribe(() => {
-      this.churchesInitialize();
     });
   }
 }

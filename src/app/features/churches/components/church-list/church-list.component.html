@@ -1,0 +1,25 @@
+<h2>Igrejas</h2>
+<table class="table table-striped" dataSource="churches">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let church of churches">
+      <th scope="row">{{ church.id }}</th>
+      <a [routerLink]="[church.id]">
+        <td scope="row">{{ church.name }}</td>
+      </a>
+      <td scope="row">{{ church.cnpj }}</td>
+      <td scope="row">{{ church.phone }}</td>
+      <td scope="row">{{ church.city }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button href="#" type="button" class="btn btn-dark">Criar nova igreja</button>

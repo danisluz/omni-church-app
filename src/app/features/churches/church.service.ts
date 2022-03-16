@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Churches } from './components/churches.model';
+import { Church } from './components/church.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,13 +11,20 @@ export class ChurchesService {
 
   constructor(private http: HttpClient) {}
 
-  read(): Observable<Churches[]> {
-    return this.http.get<Churches[]>(this.baseUrl);
+  list(): Observable<Church[]> {
+    this.http.get<any>('http://localhost:3333/churches').subscribe( retorno => {
+      console.log(retorno)
+    });
+    return this.http.get<Church[]>(this.baseUrl);
   }
 
-  delete(id?: number): Observable<Churches> {
+  detail(id: string): Observable<Church> {
+    return this.http.get<Church>(this.baseUrl + `/${id}`)
+  }
+
+  delete(id?: number): Observable<Church> {
     const url = `${this.baseUrl}/${id}`;
     console.log(url);
-    return this.http.delete<Churches>(url);
+    return this.http.delete<Church>(url);
   }
 }

@@ -1,4 +1,4 @@
-export interface Churches {
+export interface Church {
   id?: number
   name: string
   cnpj: string

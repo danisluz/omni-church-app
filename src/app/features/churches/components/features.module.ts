@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ChurchReadComponent } from './church-read/church-read.component';
+import { ChurchListComponent } from './church-list/church-list.component';
+import { ChurchUpdateComponent } from './church-update/church-update.component';
+import { ChurchDetailComponent } from './church-detail/church-detail.component';
 
 
 @NgModule({
@@ -10,10 +12,14 @@ import { ChurchReadComponent } from './church-read/church-read.component';
     RouterModule,
   ],
   declarations: [
-    ChurchReadComponent
+    ChurchListComponent,
+    ChurchUpdateComponent,
+    ChurchDetailComponent
   ],
   exports: [
-    ChurchReadComponent
+    ChurchListComponent,
+    ChurchUpdateComponent,
+    ChurchDetailComponent
   ]
 })
 export class FeatureModules { }
