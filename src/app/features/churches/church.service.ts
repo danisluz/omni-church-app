@@ -12,9 +12,6 @@ export class ChurchesService {
   constructor(private http: HttpClient) {}
 
   list(): Observable<Church[]> {
-    this.http.get<any>('http://localhost:3333/churches').subscribe( retorno => {
-      console.log(retorno)
-    });
     return this.http.get<Church[]>(this.baseUrl);
   }
 
