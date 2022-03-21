@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ChurchesService {
-  baseUrl = 'http://localhost:3000/churches';
+  baseUrl = 'http://omni-church-api.herokuapp.com/churches';
 
   constructor(private http: HttpClient) {}
 
