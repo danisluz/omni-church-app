@@ -24,7 +24,7 @@ export class ChurchDetailComponent implements OnInit {
   churchInitialize(): void {
     this.churcheService.detail(this.id).subscribe((church) => {
       this.church = church;
-      //console.log(churches)
+      //console.log(church)
     });
   }
 }

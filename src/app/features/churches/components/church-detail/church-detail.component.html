@@ -1,28 +1,37 @@
-<h2>Igrejas</h2>
-<table class="table table-striped" dataSource="churches">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Nome</th>
-    <th scope="col">CNPJ</th>
-    <th scope="col">Telefone</th>
-    <th scope="col">Cidade</th>
-    <th scope="col">Editar</th>
-  </tr>
-  </thead>
-  <tbody>
+<div class="jumbotron">
 
-  <tr>
-    <th scope="row">{{ church.id }}</th>
-    <td scope="row">{{ church.name }}</td>
-    <td scope="row">{{ church.cnpj }}</td>
-    <td scope="row">{{ church.phone }}</td>
-    <td scope="row">{{ church.city }}</td>
-    <td scope="row">
-      <a class="btn edit" href="#"><i class="bi bi-pencil-square"></i></a>
-  </td>
-  </tr>
-  </tbody>
-</table>
+  <h2 class="display-6">{{ church.name }}</h2>
 
-<button href="#" type="button" class="btn btn-dark">Editar</button>
+  <p class="lead">Nome: {{ church.name }}</p>
+  <p class="lead">Email: church.email</p>
+  <p class="lead">CNPJ: {{ church.cnpj }}</p>
+  <p class="lead">Telefone: {{ church.phone }}</p>
+  <p class="lead">Criação: church.createdAt</p>
+  <p class="lead">Última atualização: church.updatedAt</p>
+  <p>
+    <strong>
+      Endereço
+    </strong>
+  </p>
+  <p>Rua: church.address.street</p>
+  <p>Número: church.address.number</p>
+  <p>Complemento: church.address.apartment</p>
+  <p>CEP: church.address.zip_code</p>
+  <p>Bairro: church.address.district</p>
+  <p>Cidade: church.address.city</p>
+  <p>Estado: church.address.state</p>
+  <p>: church.address.state</p>
+
+</div>
+  <button href="#" type="button" class="btn btn-dark">Editar</button>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>

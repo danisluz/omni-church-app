@@ -8,7 +8,7 @@ import { Church } from '../church.model';
 })
 export class ChurchListComponent implements OnInit {
   churches: Church[] = [];
-  displayedColumns = ['id', 'name', 'cnpj', 'phone', 'city'];
+  displayedColumns = ['id', 'name', 'cnpj', 'phone', 'address'];
 
   constructor(private churcheService: ChurchesService) {}
 

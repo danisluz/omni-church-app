@@ -3,5 +3,8 @@ export interface Church {
   name: string
   cnpj: string
   phone: string
-  city: string
+  address: {
+    city: string
+  }
+
 }
