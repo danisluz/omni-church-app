@@ -19,6 +19,10 @@ export class ChurchesService {
     return this.http.get<Church>(this.baseUrl + `/${id}`)
   }
 
+  edit(id: string): Observable<Church> {
+    return this.http.get<Church>(this.baseUrl + `/edit/${id}`)
+  }
+
   delete(id?: number): Observable<Church> {
     const url = `${this.baseUrl}/${id}`;
     console.log(url);
