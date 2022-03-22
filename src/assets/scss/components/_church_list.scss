@@ -1,0 +1,12 @@
+@import '../vars';
+@import '../mixins';
+
+.table {
+  a {
+    display: inline;
+  }
+}
+
+.btn-dark {
+  @include button-light;
+}

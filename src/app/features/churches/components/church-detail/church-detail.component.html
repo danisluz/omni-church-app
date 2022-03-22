@@ -1,37 +1,35 @@
-<div class="jumbotron">
-
-  <h2 class="display-6">{{ church.name }}</h2>
-
-  <p class="lead">Nome: {{ church.name }}</p>
-  <p class="lead">Email: church.email</p>
-  <p class="lead">CNPJ: {{ church.cnpj }}</p>
-  <p class="lead">Telefone: {{ church.phone }}</p>
-  <p class="lead">Criação: church.createdAt</p>
-  <p class="lead">Última atualização: church.updatedAt</p>
-  <p>
-    <strong>
-      Endereço
-    </strong>
-  </p>
-  <p>Rua: church.address.street</p>
-  <p>Número: church.address.number</p>
-  <p>Complemento: church.address.apartment</p>
-  <p>CEP: church.address.zip_code</p>
-  <p>Bairro: church.address.district</p>
-  <p>Cidade: church.address.city</p>
-  <p>Estado: church.address.state</p>
-  <p>: church.address.state</p>
+<div *ngIf="church$ | async as church" class="church-detail">
+  <h2 class="h2 bold">{{ church.name }}</h2>
+  <dl class="row">
+    <hr>
+    <dt class="col-sm-3 bold mb-3">Dados</dt>
+    <dd class="col-sm-9">
+      <p>Nome: {{ church.name }}</p>
+      <p>Email: {{ church.email }}</p>
+      <p>CNPJ: {{ church.cnpj }}</p>
+      <p>Telefone: {{ church.phone }}</p>
+      <p>Criação: {{ church?.createdAt | date }}</p>
+      <p>Última atualização: {{ church?.updatedAt | date }}</p>
+    </dd>
+  </dl>
+  <hr>
+  <div *ngIf="church.address as address">
+    <dl class="row">
+      <dt class="col-sm-3 bold mb-3">Endereço</dt>
+      <dd class="col-sm-9">
+        <p>Rua: {{ address.street }}, Nº {{ address.number }}</p>
+        <p>Complemento: {{ address?.apartment }}</p>
+        <p>CEP: {{ address.zip_code }}</p>
+        <p>Bairro: {{ address.district }}</p>
+        <p>Cidade: {{ address.city }}</p>
+        <p>Estado: {{ address.state }}</p>
+      </dd>
+    </dl>
+    <hr>
+  </div>
 
 </div>
-  <button href="#" type="button" class="btn btn-dark">Editar</button>
-
-
-<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
+<div class="d-flex flex-row">
+  <button href="#" type="button" class="btn btn-dark m-2">Editar</button>
+  <button href="#" type="button" class="btn btn-danger m-2">Apagar</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ChurchesService } from '../../church.service';
 import { Church } from '../church.model';
 
@@ -8,7 +9,7 @@ import { Church } from '../church.model';
   templateUrl: './church-detail.component.html',
 })
 export class ChurchDetailComponent implements OnInit {
-  church: Church;
+  church$: Observable<Church>;
   id: string;
 
   constructor(private churcheService: ChurchesService, private route: ActivatedRoute) {}
@@ -22,9 +23,7 @@ export class ChurchDetailComponent implements OnInit {
   }
 
   churchInitialize(): void {
-    this.churcheService.detail(this.id).subscribe((church) => {
-      this.church = church;
-      //console.log(church)
-    });
+    this.church$ = this.churcheService.detail(this.id)
   }
+
 }

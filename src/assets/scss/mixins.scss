@@ -7,11 +7,21 @@
 
 @mixin button-black() {
   padding: 3px 20px;
-  color: #7886A0;
+  color: $color-200;
   background-color: $bg-content-color;
   &:hover {
-    color: #080C18;
-    background-color: #666FF7;
+    color: $color-900;
+    background-color: $color-200;
+  }
+}
+
+@mixin button-danger() {
+  padding: 3px 20px;
+  color: $color-100;
+  background-color: $color-danger;
+  &:hover {
+    color: $color-900;
+    background-color: $color;
   }
 }
 
