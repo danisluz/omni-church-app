@@ -9,10 +9,15 @@ import { CoreModules } from './core/core.module';
 import { FeatureModules } from './features/churches/components/features.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { HttpClientModule } from "@angular/common/http";
+import { ChurchEditContainer } from './pages/church-edit/church-edit.container';
+import { ChurchCreateContainer } from './pages/church-create/church-create.container';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChurchEditContainer,
+    ChurchCreateContainer
+
   ],
   imports: [
     BrowserModule,

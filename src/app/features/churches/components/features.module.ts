@@ -4,17 +4,20 @@ import { RouterModule } from '@angular/router';
 import { ChurchListComponent } from './church-list/church-list.component';
 import { ChurchEditComponent } from './church-edit/church-edit.component';
 import { ChurchDetailComponent } from './church-detail/church-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ChurchListComponent,
     ChurchEditComponent,
-    ChurchDetailComponent
+    ChurchDetailComponent,
   ],
   exports: [
     ChurchListComponent,
