@@ -1,25 +1,25 @@
 <div>
   <h3 *ngIf="editMode">
-    Edit mode
+    Editar igreja
   </h3>
-  <form [formGroup]="form">
+  <form [formGroup]="form" *ngIf="form">
     <div >
       <caption>Dados</caption>
       <div class="form-group">
         <label class="form-label" for="usr">Nome</label>
-        <input formControlName="name" type="text" class="form-control" id="imputName" placeholder="Nome da igreja">
+        <input formControlName="name" type="text" class="form-control" placeholder="Nome da igreja">
       </div>
       <div class="form-group">
         <label class="form-label" for="inputEmail">E-mail</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+        <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
       </div>
       <div class="form-group">
         <label class="form-label" for="typeNumber">CNPJ</label>
-        <input type="text"  class="form-control" id="typeNumber" placeholder="XX.XXX.XXX/0001-XX">
+        <input formControlName="cnpj" type="text"  class="form-control" placeholder="XX.XXX.XXX/0001-XX">
       </div>
       <div class="form-outline">
         <label class="form-label" for="typePhone">Telefone</label>
-        <input type="tel"  class="form-control" id="typePhone" placeholder="(XX)XXXXX-XXXX">
+        <input formControlName="phone" type="tel"  class="form-control" placeholder="(XX)XXXXX-XXXX">
       </div>
       <caption>Endereço</caption>
       <div class="form-group">

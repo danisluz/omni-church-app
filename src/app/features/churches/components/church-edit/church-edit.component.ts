@@ -7,34 +7,67 @@ import { Church } from '../church.model';
 
 @Component({
   selector: 'app-church-edit',
-  templateUrl: './church-edit.component.html'
+  templateUrl: './church-edit.component.html',
 })
 export class ChurchEditComponent implements OnInit {
   form: FormGroup;
   church$: Observable<Church>;
-  id: string;
-  @Input() editMode: boolean
+  @Input() editMode: boolean;
 
-  constructor(private churcheService: ChurchesService, private route: ActivatedRoute, private formBuilder: FormBuilder) {}
+  constructor(
+    private churcheService: ChurchesService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     if (this.editMode) {
       const id = this.route.snapshot.paramMap.get('id');
-        if (id) {
-        this.id = id;
+      if (id) {
+        this.churchInitialize(id);
       }
-      //this.churchInitialize();
+      this.church$.subscribe((church) => {
+        this.initForm(church);
+      });
+    } else {
+      this.initForm();
     }
-    
-
-    this.church$.subscribe(church => {
-      this.form = this.formBuilder.group({
-        name: [church.name, Validators.required],
-      })
-    })
   }
 
-  churchInitialize(): void {
-    this.church$ = this.churcheService.detail(this.id)
+  // buildForm(church?: Church) {
+  //   if (church) {
+  //      this.form = this.formBuilder.group({
+  //       name: [church.name, Validators.required],
+  //     })
+  //   } else {
+  //     this.form = this.formBuilder.group({
+  //       name: ['', Validators.required],
+  //     })
+  //   }
+  // }
+
+  initForm(church?: Church) {
+    this.form = this.formBuilder.group({
+      name: [
+        church ? church.name : '',
+        Validators.required,
+      ],
+      email: [
+        church ? church.email : '',
+        Validators.required,
+      ],
+      cnpj: [
+        church ? church.cnpj : '',
+        Validators.required,
+      ],
+      phone: [
+        church ? church.phone : '',
+        Validators.required,
+      ],
+    });
+  }
+
+  churchInitialize(id: string): void {
+    this.church$ = this.churcheService.detail(id);
   }
 }
