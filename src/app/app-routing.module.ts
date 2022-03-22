@@ -8,12 +8,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: "", component: DashboardComponent },
-  { path: "404", component: DashboardComponent },
 
   { path: "churches", pathMatch: "full", component: ChurchListComponent},
+  { path: "churches/create", pathMatch: "full", component: ChurchCreateContainer},
   { path: "churches/:id", pathMatch: "full", component: ChurchDetailComponent},
   { path: "churches/edit/:id", pathMatch: "full", component: ChurchEditContainer},
-  { path: "churches/putinho", pathMatch: "full", component: ChurchCreateContainer}
 ];
 
 @NgModule({
