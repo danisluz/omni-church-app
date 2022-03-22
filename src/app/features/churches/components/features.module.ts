@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ChurchListComponent } from './church-list/church-list.component';
-import { ChurchUpdateComponent } from './church-update/church-update.component';
+import { ChurchEditComponent } from './church-edit/church-edit.component';
 import { ChurchDetailComponent } from './church-detail/church-detail.component';
 
 
@@ -13,12 +13,12 @@ import { ChurchDetailComponent } from './church-detail/church-detail.component';
   ],
   declarations: [
     ChurchListComponent,
-    ChurchUpdateComponent,
+    ChurchEditComponent,
     ChurchDetailComponent
   ],
   exports: [
     ChurchListComponent,
-    ChurchUpdateComponent,
+    ChurchEditComponent,
     ChurchDetailComponent
   ]
 })
