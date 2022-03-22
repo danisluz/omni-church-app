@@ -2,6 +2,9 @@
   <h3 *ngIf="editMode">
     Editar igreja
   </h3>
+  <h3 *ngIf="!editMode">
+    Criar nova igreja
+  </h3>
   <form [formGroup]="form" *ngIf="form">
     <div >
       <caption>Dados</caption>
@@ -21,35 +24,41 @@
         <label class="form-label" for="typePhone">Telefone</label>
         <input formControlName="phone" type="tel"  class="form-control" placeholder="(XX)XXXXX-XXXX">
       </div>
-      <caption>Endereço</caption>
-      <div class="form-group">
-        <label class="form-label" for="inputAddress">Rua</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Rua ...">
+      <div formGroupName="address">
+        <caption>Endereço</caption>
+        <div class="form-group">
+          <label class="form-label" for="inputAddress">Rua</label>
+          <input formControlName="street" type="text" class="form-control" placeholder="Rua ...">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="typeNumber">Número</label>
+          <input formControlName="number" type="text" class="form-control" placeholder="XXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inputAddress1">Complemento</label>
+          <input formControlName="apartment" type="text"  class="form-control" placeholder="Casa, Apartamento, etc...">
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="inputZip">CEP</label>
+          <input formControlName="zip_code"type="text"  class="form-control" placeholder="XXXXX-XXX">
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="inputDistrict">Bairro</label>
+          <input formControlName="district" type="text"  class="form-control" placeholder="Bairro">
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="inputCity">Cidade</label>
+          <input formControlName="city" type="text"  class="form-control" placeholder="Cidade">
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="inputCity">Estado</label>
+          <input formControlName="state" type="text"  class="form-control" placeholder="Estado">
+        </div>
       </div>
-       <div class="form-group">
-        <label class="form-label" for="typeNumber">Número</label>
-        <input type="text" class="form-control" id="typeNumber" placeholder="XXXX">
       </div>
-      <div class="form-group">
-        <label class="form-label" for="inputAddress1">Complemento</label>
-        <input type="text"  class="form-control" id="inputAddress1" placeholder="Casa, Apartamento, etc...">
-      </div>
-      <div class="form-outline">
-        <label class="form-label" for="inputZip">CEP</label>
-        <input type="text"  class="form-control" id="inputZip" placeholder="XXXXX-XXX">
-      </div>
-      <div class="form-outline">
-        <label class="form-label" for="inputCity">Cidade</label>
-        <input type="text"  class="form-control" id="inputCity" placeholder="Cidade">
-      </div>
-      <div class="form-outline">
-        <label class="form-label" for="inputState">Estado</label>
-        <select id="inputState" class="form-control">
-          <option selected>Selecione...</option>
-          <option>...</option>
-        </select>
-      </div>
-
+    <div *ngIf="editMode" class="d-flex flex-row">
+        <button  (click)="onSubmit()" type="button" class="btn btn-dark m-2">Alterar</button>
+        <button (click)="goBack()" type="button" class="btn btn-danger m-2">Cancelar</button>
     </div>
   </form>
 </div>
