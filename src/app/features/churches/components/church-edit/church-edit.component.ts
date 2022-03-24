@@ -90,6 +90,13 @@ export class ChurchEditComponent implements OnInit {
         this.goBack());
   }
 
+  onCreate(): void {
+    let churchCreate = { ...this.form.value } as Church;
+    this.churchService
+      .create(churchCreate).subscribe( () =>
+      this.goBack());
+  }
+
   goBack(): void {
     this.location.back();
   }

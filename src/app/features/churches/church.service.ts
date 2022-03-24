@@ -24,6 +24,10 @@ export class ChurchesService {
     return this.http.patch<Church>(this.baseUrl + `/${id}`, church);
   }
 
+  create( church: Church): Observable<Church> {
+    return this.http.post<Church>(this.baseUrl, church);
+  }
+
   delete(id: string): Observable<JSON> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<JSON>(url);

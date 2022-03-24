@@ -94,7 +94,7 @@
         <button (click)="goBack()" type="button" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
     </div>
     <div *ngIf="!editMode" class="d-flex flex-row gap-3">
-        <button  class="btn btn-dark"><i class="bi bi-save m-lg-2"></i>Criar</button>
+        <button  (click)="onCreate()" class="btn btn-dark"><i class="bi bi-save m-lg-2"></i>Criar</button>
         <button (click)="goBack()" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
     </div>
   </form>
