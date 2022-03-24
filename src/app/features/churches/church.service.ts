@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ChurchesService {
   baseUrl = 'http://omni-church-api.herokuapp.com/churches';
+  // baseUrl = 'http://localhost:8000/churches';
 
   constructor(private http: HttpClient) {}
 
@@ -19,9 +20,9 @@ export class ChurchesService {
     return this.http.get<Church>(this.baseUrl + `/${id}`)
   }
 
-  update2(church: Church){
+  update(id: string, church: Church){
     console.log(church)
-    return this.http.patch<Church>(this.baseUrl + `/${church.id}`, JSON.stringify(church))
+    return this.http.patch<Church>(this.baseUrl + `/${id}`, church)
   }
 
   delete(id?: number): Observable<Church> {

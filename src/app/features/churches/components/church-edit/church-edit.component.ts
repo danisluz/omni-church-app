@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, take, tap } from 'rxjs';
 import { ChurchesService } from '../../church.service';
 import { Church } from '../church.model';
 
@@ -13,10 +13,11 @@ import { Church } from '../church.model';
 export class ChurchEditComponent implements OnInit {
   form: FormGroup;
   church$: Observable<Church>;
+  id: string;
   @Input() editMode: boolean;
 
   constructor(
-    private churcheService: ChurchesService,
+    private churchService: ChurchesService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private location: Location
@@ -26,6 +27,7 @@ export class ChurchEditComponent implements OnInit {
     if (this.editMode) {
       const id = this.route.snapshot.paramMap.get('id');
       if (id) {
+        this.id = id;
         this.churchInitialize(id);
       }
       this.church$.subscribe((church) => {
@@ -90,18 +92,15 @@ export class ChurchEditComponent implements OnInit {
   }
 
   churchInitialize(id: string): void {
-    this.church$ = this.churcheService.detail(id);
+    this.church$ = this.churchService.detail(id);
   }
 
   onSubmit() {
-    console.log(this.form.value);
-    let churchUpdate = this.form.value;
-    this.church$.subscribe((church) => {
-      churchUpdate.id = church.id;
-      this.churcheService
-        .update2(churchUpdate)
-        .subscribe((church) => console.log(church));
-    });
+    let churchUpdate = { ...this.form.value };
+    this.churchService
+      .update(this.id, churchUpdate).subscribe(() =>
+        this.goBack());
+
   }
 
   goBack(): void {
