@@ -17,17 +17,15 @@ export class ChurchesService {
   }
 
   detail(id: string): Observable<Church> {
-    return this.http.get<Church>(this.baseUrl + `/${id}`)
+    return this.http.get<Church>(this.baseUrl + `/${id}`);
   }
 
-  update(id: string, church: Church){
-    console.log(church)
-    return this.http.patch<Church>(this.baseUrl + `/${id}`, church)
+  update(id: string, church: Church): Observable<Church> {
+    return this.http.patch<Church>(this.baseUrl + `/${id}`, church);
   }
 
-  delete(id?: number): Observable<Church> {
+  delete(id: string): Observable<JSON> {
     const url = `${this.baseUrl}/${id}`;
-    console.log(url);
-    return this.http.delete<Church>(url);
+    return this.http.delete<JSON>(url);
   }
 }

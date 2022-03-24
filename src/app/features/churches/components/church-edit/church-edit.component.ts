@@ -38,19 +38,11 @@ export class ChurchEditComponent implements OnInit {
     }
   }
 
-  // buildForm(church?: Church) {
-  //   if (church) {
-  //      this.form = this.formBuilder.group({
-  //       name: [church.name, Validators.required],
-  //     })
-  //   } else {
-  //     this.form = this.formBuilder.group({
-  //       name: ['', Validators.required],
-  //     })
-  //   }
-  // }
+  churchInitialize(id: string): void {
+    this.church$ = this.churchService.detail(id);
+  }
 
-  initForm(church?: Church) {
+  initForm(church?: Church): void {
     this.form = this.formBuilder.group({
       name: [
         church ? church.name : '',
@@ -91,16 +83,11 @@ export class ChurchEditComponent implements OnInit {
     });
   }
 
-  churchInitialize(id: string): void {
-    this.church$ = this.churchService.detail(id);
-  }
-
-  onSubmit() {
-    let churchUpdate = { ...this.form.value };
+  onSubmit(): void {
+    let churchUpdate = { ...this.form.value } as Church;
     this.churchService
       .update(this.id, churchUpdate).subscribe(() =>
         this.goBack());
-
   }
 
   goBack(): void {
