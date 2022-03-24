@@ -19,9 +19,9 @@ export class ChurchesService {
     return this.http.get<Church>(this.baseUrl + `/${id}`)
   }
 
-  update(church: Church){
+  update2(church: Church){
     console.log(church)
-    return this.http.put<Church>(this.baseUrl + `/${church.id}`, JSON.stringify(church))
+    return this.http.patch<Church>(this.baseUrl + `/${church.id}`, JSON.stringify(church))
   }
 
   delete(id?: number): Observable<Church> {

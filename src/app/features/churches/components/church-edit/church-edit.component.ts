@@ -19,7 +19,7 @@ export class ChurchEditComponent implements OnInit {
     private churcheService: ChurchesService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private location: Location,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -50,11 +50,34 @@ export class ChurchEditComponent implements OnInit {
 
   initForm(church?: Church) {
     this.form = this.formBuilder.group({
-      name: [church ? church.name : '', [Validators.required, Validators.minLength(2)]],
-      email: [church ? church.email : '', Validators.required],
-      cnpj: [church ? church.cnpj : '', Validators.required],
-      phone: [church ? church.phone : '', Validators.required],
-      address: this.formBuilder.group( {
+      name: [
+        church ? church.name : '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(30),
+        ],
+      ],
+      email: [
+        church ? church.email : '',
+        [
+          Validators.required,
+          Validators.email
+        ],
+      ],
+      cnpj: [
+        church ? church.cnpj : '',
+        [
+          Validators.required
+        ]
+      ],
+      phone: [
+        church ? church.phone : '',
+        [
+          Validators.required
+        ]
+      ],
+      address: this.formBuilder.group({
         street: [church?.address ? church.address.street : ''],
         number: [church?.address ? church.address.number : ''],
         apartment: [church?.address ? church.address.apartment : ''],
@@ -72,7 +95,13 @@ export class ChurchEditComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value);
-    this.churcheService.update(this.form.value)
+    let churchUpdate = this.form.value;
+    this.church$.subscribe((church) => {
+      churchUpdate.id = church.id;
+      this.churcheService
+        .update2(churchUpdate)
+        .subscribe((church) => console.log(church));
+    });
   }
 
   goBack(): void {

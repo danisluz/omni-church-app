@@ -1,8 +1,11 @@
 <div class="table-responsive">
-  <table class="table table-striped table-hover caption-top" dataSource="churches">
-    <caption class="h2 bold">Igrejas</caption>
+  <h2 class="h2 bold text-secondary">Igrejas</h2>
+  <table
+    class="table table-striped table-hover caption-top"
+    dataSource="churches"
+  >
     <thead>
-      <tr>
+      <tr >
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">CNPJ</th>
@@ -13,16 +16,19 @@
     <tbody>
       <tr *ngFor="let church of churches">
         <th scope="row">{{ church.id }}</th>
-        <a [routerLink]="[church.id]">
-          <td scope="row">{{ church.name }}</td>
-        </a>
+        <td scope="row">
+          <a [routerLink]="[church.id]">
+            {{ church.name }}
+          </a>
+        </td>
         <td scope="row">{{ church.cnpj }}</td>
         <td scope="row">{{ church.phone }}</td>
-        <td scope="row">{{ church?.address?.city}}</td>
+        <td scope="row">{{ church?.address?.city }}</td>
       </tr>
     </tbody>
   </table>
-  <button routerLink="/churches/create" type="button" class="btn btn-dark">Criar nova igreja</button>
+  <button routerLink="/churches/create" type="button" class="btn btn-dark">
+    <i class="bi bi-save m-lg-2"></i>
+    Criar nova igreja
+  </button>
 </div>
-
-

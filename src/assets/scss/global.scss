@@ -1,7 +1,9 @@
 @use "./components/navbar";
-@use "./components/dashboard";
-@use "./components/church_list";
 @use "./components/header";
+@use "./components/dashboard";
+
+@use "./components/church_detail";
+@use "./components/church_list";
 
 @import 'vars';
 @import 'mixins';
@@ -17,6 +19,8 @@ body { margin: 0; }
   background: $nav-color;
   height: 100%;
   margin-top: -50px;
+  position: fixed;
+  overflow: auto;
 }
 
 .content-wrapper {
@@ -36,7 +40,7 @@ body { margin: 0; }
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 576px) {
   .content-wrapper {
     margin-left: 260px;
   }

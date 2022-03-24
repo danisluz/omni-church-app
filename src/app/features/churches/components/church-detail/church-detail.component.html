@@ -1,35 +1,75 @@
 <div *ngIf="church$ | async as church" class="church-detail">
-  <h2 class="h2 bold">{{ church.name }}</h2>
-  <dl class="row">
-    <hr>
-    <dt class="col-sm-3 bold mb-3">Dados</dt>
-    <dd class="col-sm-9">
+  <h2 class="h2 bold text-secondary">{{ church.name }}</h2>
+  <hr />
+  <caption>
+    Dados
+  </caption>
+  <div class="row">
+    <div class="col-12 col-md-4">
       <p>Nome: {{ church.name }}</p>
+    </div>
+    <div class="col-12 col-md-4">
       <p>Email: {{ church.email }}</p>
+    </div>
+    <div class="col-12 col-md-4">
       <p>CNPJ: {{ church.cnpj }}</p>
-      <p>Telefone: {{ church.phone }}</p>
-      <p>Criação: {{ church?.createdAt | date }}</p>
-      <p>Última atualização: {{ church?.updatedAt | date }}</p>
-    </dd>
-  </dl>
-  <hr>
-  <div *ngIf="church.address as address">
-    <dl class="row">
-      <dt class="col-sm-3 bold mb-3">Endereço</dt>
-      <dd class="col-sm-9">
-        <p>Rua: {{ address.street }}, Nº {{ address.number }}</p>
-        <p>Complemento: {{ address?.apartment }}</p>
-        <p>CEP: {{ address.zip_code }}</p>
-        <p>Bairro: {{ address.district }}</p>
-        <p>Cidade: {{ address.city }}</p>
-        <p>Estado: {{ address.state }}</p>
-      </dd>
-    </dl>
-    <hr>
+    </div>
   </div>
-  <div class="d-flex flex-row">
-    <button [routerLink]="['/churches/edit', church.id]" type="button" class="btn btn-dark m-2">Editar</button>
-    <button href="#" type="button" class="btn btn-danger m-2">Apagar</button>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <p>Telefone: {{ church.phone }}</p>
+    </div>
+    <div class="col-12 col-md-4">
+      <p>Criação: {{ church?.createdAt | date }}</p>
+    </div>
+    <div class="col-12 col-md-4">
+      <p>Última atualização: {{ church?.updatedAt | date }}</p>
+    </div>
+  </div>
+  <hr />
+  <caption>
+    Endereço
+  </caption>
+  <div *ngIf="church.address as address">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <p>Rua: {{ address.street }}, Nº {{ address.number }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p>Complemento: {{ address?.apartment }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p>Bairro: {{ address.district }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <p>Cidade: {{ address.city }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p>Estado: {{ address.state }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p>CEP: {{ address.zip_code }}</p>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="d-flex flex-row gap-3">
+    <button routerLink="/churches" type="button" class="btn btn-dark">
+      <i class="bi bi-arrow-left m-lg-2"></i>
+      Voltar
+    </button>
+    <button
+      [routerLink]="['/churches/edit', church.id]"
+      type="button"
+      class="btn btn-dark"
+    >
+      <i class="bi bi-pencil-square m-lg-2"></i>
+      Editar
+    </button>
+    <button href="#" type="button" class="btn btn-danger">
+      <i class="bi bi-trash3 m-lg-2"></i>Apagar
+    </button>
   </div>
 </div>
-

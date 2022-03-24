@@ -1,64 +1,101 @@
 <div>
-  <h3 *ngIf="editMode">
+  <h3 *ngIf="editMode" class="text-secondary">
     Editar igreja
   </h3>
-  <h3 *ngIf="!editMode">
+  <h3 *ngIf="!editMode" class="text-secondary">
     Criar nova igreja
   </h3>
   <form [formGroup]="form" *ngIf="form">
-    <div >
+    <div>
       <caption>Dados</caption>
-      <div class="form-group">
-        <label class="form-label" for="usr">Nome</label>
-        <input formControlName="name" type="text" class="form-control" placeholder="Nome da igreja">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-3">
+            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="Nome da igreja">
+            <label class="form-label" for="usr">Nome</label>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-3">
+            <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="E-mail">
+            <label class="form-label" for="inputEmail">E-mail</label>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label class="form-label" for="inputEmail">E-mail</label>
-        <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="typeNumber">CNPJ</label>
-        <input formControlName="cnpj" type="text"  class="form-control" placeholder="XX.XXX.XXX/0001-XX">
-      </div>
-      <div class="form-outline">
-        <label class="form-label" for="typePhone">Telefone</label>
-        <input formControlName="phone" type="tel"  class="form-control" placeholder="(XX)XXXXX-XXXX">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-3">
+            <input formControlName="cnpj" type="text"  class="form-control" id="floatingInput" placeholder="XX.XXX.XXX/0001-XX" ui-mask="999.999.999-99">
+            <label class="form-label" for="typeNumber">CNPJ Nº</label>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-3">
+            <input formControlName="phone" type="tel"  class="form-control" id="floatingInput" placeholder="(XX)XXXXX-XXXX">
+            <label class="form-label" for="typePhone">Telefone</label>
+          </div>
+        </div>
       </div>
       <div formGroupName="address">
         <caption>Endereço</caption>
-        <div class="form-group">
-          <label class="form-label" for="inputAddress">Rua</label>
-          <input formControlName="street" type="text" class="form-control" placeholder="Rua ...">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-floating mb-3">
+              <input formControlName="street" type="text" class="form-control" id="floatingInput" placeholder="Rua ...">
+              <label class="form-label" for="inputAddress">Rua</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="form-floating mb-3">
+              <input formControlName="number" type="text" class="form-control" id="floatingInput" placeholder="XXXX">
+              <label class="form-label" for="typeNumber">Número</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="form-floating mb-3">
+              <input formControlName="apartment" type="text"  class="form-control" id="floatingInput" placeholder="Casa, Apartamento, etc...">
+              <label class="form-label" for="inputAddress1">Complemento</label>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="typeNumber">Número</label>
-          <input formControlName="number" type="text" class="form-control" placeholder="XXXX">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="form-floating mb-3">
+              <input formControlName="district" type="text"  class="form-control" id="floatingInput" placeholder="Bairro">
+              <label class="form-label" for="inputDistrict">Bairro</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="form-floating mb-3">
+              <input formControlName="city" type="text"  class="form-control" id="floatingInput" placeholder="Cidade">
+              <label class="form-label" for="inputCity">Cidade</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="form-floating mb-3">
+              <input formControlName="state" type="text"  class="form-control" id="floatingInput" placeholder="Estado">
+              <label class="form-label" for="inputCity">Estado</label>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="inputAddress1">Complemento</label>
-          <input formControlName="apartment" type="text"  class="form-control" placeholder="Casa, Apartamento, etc...">
-        </div>
-        <div class="form-outline">
-          <label class="form-label" for="inputZip">CEP</label>
-          <input formControlName="zip_code"type="text"  class="form-control" placeholder="XXXXX-XXX">
-        </div>
-        <div class="form-outline">
-          <label class="form-label" for="inputDistrict">Bairro</label>
-          <input formControlName="district" type="text"  class="form-control" placeholder="Bairro">
-        </div>
-        <div class="form-outline">
-          <label class="form-label" for="inputCity">Cidade</label>
-          <input formControlName="city" type="text"  class="form-control" placeholder="Cidade">
-        </div>
-        <div class="form-outline">
-          <label class="form-label" for="inputCity">Estado</label>
-          <input formControlName="state" type="text"  class="form-control" placeholder="Estado">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="form-floating mb-3">
+              <input formControlName="zip_code"type="text"  class="form-control" id="floatingInput" placeholder="XXXXX-XXX">
+              <label class="form-label" for="inputZip">CEP</label>
+            </div>
+          </div>
         </div>
       </div>
       </div>
-    <div *ngIf="editMode" class="d-flex flex-row">
-        <button  (click)="onSubmit()" type="button" class="btn btn-dark m-2">Alterar</button>
-        <button (click)="goBack()" type="button" class="btn btn-danger m-2">Cancelar</button>
+      <hr>
+    <div *ngIf="editMode" class="d-flex flex-row gap-3">
+        <button  (click)="onSubmit()" type="button" class="btn btn-dark"><i class="bi bi-pencil-square m-lg-2"></i>Alterar</button>
+        <button (click)="goBack()" type="button" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
+    </div>
+    <div *ngIf="!editMode" class="d-flex flex-row gap-3">
+        <button  class="btn btn-dark"><i class="bi bi-save m-lg-2"></i>Criar</button>
+        <button (click)="goBack()" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
     </div>
   </form>
 </div>

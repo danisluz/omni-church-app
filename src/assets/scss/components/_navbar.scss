@@ -3,7 +3,7 @@
 
 .content {
   border-radius: 6px;
-  background-color: #CED4DF;
+  background-color: #FFFFFF;
   padding:25px;
   margin-top: 15px;
   border: solid 1px #7886A0;
@@ -22,6 +22,10 @@
   &:hover{
     color: #666FF7;
   }
+}
+
+.nav {
+  position: fixed;
 }
 
 .nav > li > a > i {

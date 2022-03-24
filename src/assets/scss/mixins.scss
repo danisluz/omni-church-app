@@ -6,7 +6,6 @@
 };
 
 @mixin button-black() {
-  padding: 3px 20px;
   color: $color-200;
   background-color: $bg-content-color;
   &:hover {
@@ -16,7 +15,6 @@
 }
 
 @mixin button-danger() {
-  padding: 3px 20px;
   color: $color-100;
   background-color: $color-danger;
   &:hover {
@@ -26,7 +24,6 @@
 }
 
 @mixin button-light() {
-  padding: 3px 20px;
   color: $color-700;
   background-color: $color-100;
   border: 1px solid $color-200;
