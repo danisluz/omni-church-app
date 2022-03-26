@@ -6,6 +6,7 @@ import { ChurchEditComponent } from './churches/components/church-edit/church-ed
 import { ChurchDetailComponent } from './churches/components/church-detail/church-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SectorListComponent } from './sectors/components/sector-list/sector-list.component';
+import { SectorDetailComponent } from './sectors/components/sector-detail/sector-detail.component';
 
 
 @NgModule({
@@ -20,12 +21,14 @@ import { SectorListComponent } from './sectors/components/sector-list/sector-lis
     ChurchEditComponent,
     ChurchDetailComponent,
     SectorListComponent,
+    SectorDetailComponent,
   ],
   exports: [
     ChurchListComponent,
     ChurchEditComponent,
     ChurchDetailComponent,
     SectorListComponent,
+    SectorDetailComponent
   ]
 })
 export class FeatureModules { }

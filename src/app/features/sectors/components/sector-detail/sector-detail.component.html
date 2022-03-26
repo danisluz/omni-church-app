@@ -1,0 +1,34 @@
+<div *ngIf="sector$ | async as sector" class="church-detail">
+  <h2 class="h2 bold text-secondary">{{ sector.name }}</h2>
+  <hr />
+  <caption>
+    Dados
+  </caption>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <p>Nome: {{ sector.name }}</p>
+    </div>
+    <div class="col-12 col-md-4">
+      <p>Número: {{ sector.number }}</p>
+    </div>
+    <div class="col-12 col-md-4">
+      <p>Sede: ****</p>
+    </div>
+  </div>
+  <hr />
+  <div class="d-flex flex-row gap-3">
+    <button routerLink="/sectors" type="button" class="btn btn-link">
+      Voltar
+    </button>
+    <button
+      [routerLink]="['', sector.id]"
+      type="button"
+      class="btn btn-link"
+    >
+      <span> Editar </span>
+    </button>
+    <button type="button" class="btn btn-link link-danger">
+      <span class="label"> Apagar </span>
+    </button>
+  </div>
+</div>

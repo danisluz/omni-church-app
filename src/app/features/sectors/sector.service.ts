@@ -15,4 +15,8 @@ export class SectorService {
   list(): Observable<Sector[]> {
     return this.http.get<Sector[]>(this.baseUrl);
   }
+
+  detail(id: string): Observable<Sector> {
+    return this.http.get<Sector>(this.baseUrl + `/${id}`);
+  }
 }

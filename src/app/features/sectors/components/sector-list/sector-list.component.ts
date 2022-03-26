@@ -19,7 +19,6 @@ export class SectorListComponent implements OnInit {
   churchesInitialize(): void {
     this.sectorService.list().subscribe((sectors) => {
       this.sectors = sectors;
-      console.log(sectors)
     });
   }
 
