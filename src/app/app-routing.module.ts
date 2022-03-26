@@ -10,7 +10,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ChurchCreateContainer } from './pages/church-create/church-create.container';
 import { ChurchEditContainer } from './pages/church-edit/church-edit.container';
 
-import { SectorCreateContainer } from './pages/sector-create/sector-create.container';
 import { SectorEditContainer } from './pages/sector-edit/sector-edit.container';
 
 const routes: Routes = [
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'sectors', component: SectorListComponent },
   { path: 'sectors/:id', component: SectorDetailComponent },
   { path: 'sectors/edit/:id', component: SectorEditContainer },
-  { path: 'sectors/create', component: SectorCreateContainer },
 
 ];
 @NgModule({

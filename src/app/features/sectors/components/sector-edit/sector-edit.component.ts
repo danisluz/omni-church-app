@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SectorService } from '../../sector.service';
@@ -30,12 +30,12 @@ export class SectorEditComponent implements OnInit {
         this.id = id;
         this.sectorInitialized(id);
       }
-      this.sector$.subscribe(sector => {
+      this.sector$.subscribe((sector) => {
         this.initForm(sector);
       });
+
     } else {
       this.initForm();
-      console.log(this.sector$)
     }
   }
 
@@ -45,8 +45,8 @@ export class SectorEditComponent implements OnInit {
 
   initForm(sector?: Sector): void {
     this.formSector = this.formBuilder.group({
-      name: [ sector ? sector.name : ''],
-      number: [ sector ? sector.number : '']
+      name: [ sector ? sector.name : '', [Validators.required]],
+      number: [ sector ? sector.number : '', [Validators.required]]
     });
   }
 

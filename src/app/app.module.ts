@@ -23,7 +23,6 @@ import { SectorCreateContainer } from './pages/sector-create/sector-create.conta
     ChurchCreateContainer,
     SectorEditContainer,
     SectorCreateContainer,
-
   ],
   imports: [
     BrowserModule,

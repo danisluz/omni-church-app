@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: './sector-create.container.html'
+  selector: 'app-dashboard',
+  templateUrl: './sector-create.container.html',
 })
-export class SectorCreateContainer {
+export class SectorCreateContainer implements OnInit {
 
-  constructor() {}
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }
