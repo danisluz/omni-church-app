@@ -1,0 +1,56 @@
+<div>
+  <h3 *ngIf="editMode" class="text-secondary">Editar setor</h3>
+  <h3 *ngIf="!editMode" class="text-secondary">Criar novo setor</h3>
+  <form [formGroup]="formSector" *ngIf="formSector">
+    <div>
+      <caption>
+        Dados
+      </caption>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-6">
+            <input
+              formControlName="name"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Nome do setor"
+            />
+            <label class="form-label" for="inputName">Nome</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-6">
+            <input
+              formControlName="number"
+              type="number"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Número"
+            />
+            <label class="form-label" for="inputNumber">Número</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div *ngIf="editMode" class="d-flex flex-row gap-3">
+      <button (click)="onSubmit()" type="button" class="btn btn-link">
+        <span> Alterar </span>
+      </button>
+      <button (click)="goBack()" type="button" class="btn btn-link">
+        <span> Voltar </span>
+      </button>
+    </div>
+
+    <div *ngIf="!editMode" class="d-flex flex-row gap-3">
+      <button class="btn btn-link">
+        <span> Criar </span>
+      </button>
+      <button class="btn btn-link">
+        <span> Voltar </span>
+      </button>
+    </div>
+  </form>
+</div>

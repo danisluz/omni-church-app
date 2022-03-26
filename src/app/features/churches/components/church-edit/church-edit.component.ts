@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, take, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ChurchesService } from '../../church.service';
 import { Church } from '../church.model';
 
@@ -54,23 +54,10 @@ export class ChurchEditComponent implements OnInit {
       ],
       email: [
         church ? church.email : '',
-        [
-          Validators.required,
-          Validators.email
-        ],
+        [Validators.required, Validators.email],
       ],
-      cnpj: [
-        church ? church.cnpj : '',
-        [
-          Validators.required
-        ]
-      ],
-      phone: [
-        church ? church.phone : '',
-        [
-          Validators.required
-        ]
-      ],
+      cnpj: [church ? church.cnpj : '', [Validators.required]],
+      phone: [church ? church.phone : '', [Validators.required]],
       address: this.formBuilder.group({
         street: [church?.address ? church.address.street : ''],
         number: [church?.address ? church.address.number : ''],
@@ -86,15 +73,13 @@ export class ChurchEditComponent implements OnInit {
   onSubmit(): void {
     let churchUpdate = { ...this.form.value } as Church;
     this.churchService
-      .update(this.id, churchUpdate).subscribe(() =>
-        this.goBack());
+      .update(this.id, churchUpdate)
+      .subscribe(() => this.goBack());
   }
 
   onCreate(): void {
     let churchCreate = { ...this.form.value } as Church;
-    this.churchService
-      .create(churchCreate).subscribe( () =>
-      this.goBack());
+    this.churchService.create(churchCreate).subscribe(() => this.goBack());
   }
 
   goBack(): void {

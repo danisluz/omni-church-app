@@ -19,4 +19,9 @@ export class SectorService {
   detail(id: string): Observable<Sector> {
     return this.http.get<Sector>(this.baseUrl + `/${id}`);
   }
+
+  update(id: string, sector: Sector): Observable<Sector> {
+    return this.http.put<Sector>(this.baseUrl + `/${id}`, sector);
+  }
+
 }
