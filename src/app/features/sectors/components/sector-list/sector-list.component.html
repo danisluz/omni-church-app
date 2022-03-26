@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <h2 class="h2 bold text-secondary">Setores</h2>
+  <table
+    class="table table-striped table-hover caption-top"
+    dataSource="sectors"
+  >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Número</th>
+        <th scope="col">Sede</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sector of sectors">
+        <th scope="row">{{ sector.id }}</th>
+        <td scope="row">
+          <a [routerLink]="[sector.id]">
+            {{ sector.name }}
+          </a>
+        </td>
+        <td scope="row">{{ sector.number }}</td>
+        <td scope="row">***</td>
+      </tr>
+    </tbody>
+  </table>
+  <button routerLink="" type="button" class="btn btn-link">
+    <span> Criar novo setor </span>
+  </button>
+</div>

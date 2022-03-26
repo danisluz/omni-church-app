@@ -4,6 +4,9 @@
 
 @use "./components/church_detail";
 @use "./components/church_list";
+@use "./components/church_edit";
+
+@use "./components/sector-list";
 
 @import 'vars';
 @import 'mixins';
