@@ -8,7 +8,7 @@ import { Sector } from './components/sector.model';
 })
 export class SectorService {
   baseUrl = 'http://omni-church-api.herokuapp.com/sectors';
-  // baseUrl = 'http://localhost:8000/churches';
+  // baseUrl = 'http://localhost:8000/sectors';
 
   constructor(private http: HttpClient) {}
 
