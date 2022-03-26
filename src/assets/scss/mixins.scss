@@ -5,35 +5,25 @@
   flex-direction: $flex-direction;
 };
 
-@mixin button-black() {
+@mixin btn-dark() {
   color: $color-200;
-  background-color: $bg-content-color;
   &:hover {
     color: $color-900;
-    background-color: $color-200;
   }
 }
 
-@mixin button-danger() {
-  color: $color-100;
-  background-color: $color-danger;
+@mixin btn-danger() {
+  color: $color-danger;
   &:hover {
     color: $color-900;
-    background-color: $color;
   }
 }
 
-@mixin button-light() {
-  color: $color-700;
-  background-color: $color-100;
-  border: 1px solid $color-200;
+@mixin btn-light() {
+  color: $color-200;
+  text-decoration: none;
   &:hover {
-    color: $color-100;
-    background-color: $color-300;
-    border: 1px solid transparent;
-  }
-  &:focus {
-    border: 1px solid transparent;
-    background-color: $color-700;
+    color: $color-300;
+    text-decoration: underline;
   }
 }

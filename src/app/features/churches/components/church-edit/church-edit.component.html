@@ -90,12 +90,32 @@
       </div>
       <hr>
     <div *ngIf="editMode" class="d-flex flex-row gap-3">
-        <button  (click)="onSubmit()" type="button" class="btn btn-dark"><i class="bi bi-pencil-square m-lg-2"></i>Alterar</button>
-        <button (click)="goBack()" type="button" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
+        <button  (click)="onSubmit()" type="button" class="btn btn-link">
+          <span>
+            Alterar
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+          </span>
+        </button>
+        <button (click)="goBack()" type="button" class="btn btn-link">
+          <span>
+            Voltar
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+          </span>
+        </button>
     </div>
     <div *ngIf="!editMode" class="d-flex flex-row gap-3">
-        <button  (click)="onCreate()" class="btn btn-dark"><i class="bi bi-save m-lg-2"></i>Criar</button>
-        <button (click)="goBack()" class="btn btn-danger"><i class="bi bi-x-square m-lg-2"></i>Cancelar</button>
+        <button  (click)="onCreate()" class="btn btn-link">
+          <span>
+            Criar
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+          </span>
+        </button>
+        <button (click)="goBack()" class="btn btn-link">
+          <span>
+            Voltar
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+          </span>
+        </button>
     </div>
   </form>
 </div>
