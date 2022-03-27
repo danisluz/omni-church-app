@@ -15,6 +15,7 @@ import { ChurchCreateContainer } from './pages/church-create/church-create.conta
 
 import { SectorEditContainer } from './pages/sector-edit/sector-edit.container';
 import { SectorCreateContainer } from './pages/sector-create/sector-create.container';
+import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SectorCreateContainer } from './pages/sector-create/sector-create.conta
     BrowserAnimationsModule,
     DashboardModule,
     HttpClientModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
