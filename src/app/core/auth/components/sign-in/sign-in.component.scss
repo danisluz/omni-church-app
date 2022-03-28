@@ -1,0 +1,31 @@
+.sign-in {
+  background: url('https://source.unsplash.com/random/1920×1080/?nature, forest, mountain') no-repeat;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .text {
+      margin-right: 200px;
+    }
+  }
+
+  .login {
+    background: white;
+    height: 600px;
+    width: 400px;
+    padding: 40px;
+  }
+
+}

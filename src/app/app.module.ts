@@ -7,23 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModules } from './core/core.module';
 import { ClusterModule } from './cluster/cluster.module';
-import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { DashboardModule } from './cluster/pages/dashboard/dashboard.module';
 import { HttpClientModule } from "@angular/common/http";
 
-import { ChurchEditContainer } from './pages/church-edit/church-edit.container';
-import { ChurchCreateContainer } from './pages/church-create/church-create.container';
-
-import { SectorEditContainer } from './pages/sector-edit/sector-edit.container';
-import { SectorCreateContainer } from './pages/sector-create/sector-create.container';
 import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChurchEditContainer,
-    ChurchCreateContainer,
-    SectorEditContainer,
-    SectorCreateContainer,
+    AppComponent
   ],
   imports: [
     BrowserModule,
