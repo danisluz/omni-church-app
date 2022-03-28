@@ -1,3 +1,4 @@
+import { SignInComponent } from './core/auth/components/sign-in/sign-in.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +15,9 @@ import { SectorEditContainer } from './pages/sector-edit/sector-edit.container';
 import { SectorCreateContainer } from './pages/sector-create/sector-create.container';
 
 const routes: Routes = [
+
+
+  { path: 'sign-in', component: SignInComponent },
 
   { path: '', component: DashboardComponent },
 
