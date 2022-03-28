@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SectorListComponent } from './sectors/components/sector-list/sector-list.component';
 import { SectorDetailComponent } from './sectors/components/sector-detail/sector-detail.component';
 import { SectorEditComponent } from './sectors/components/sector-edit/sector-edit.component';
+import { ClusterComponent } from './cluster.component';
+import { ClusterRoutingModule } from './cluster.routing.module';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { SectorEditComponent } from './sectors/components/sector-edit/sector-edi
     CommonModule,
     RouterModule,
     FormsModule,
+    ClusterRoutingModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -24,6 +27,7 @@ import { SectorEditComponent } from './sectors/components/sector-edit/sector-edi
     SectorListComponent,
     SectorDetailComponent,
     SectorEditComponent,
+    ClusterComponent,
   ],
   exports: [
     ChurchListComponent,
@@ -34,4 +38,4 @@ import { SectorEditComponent } from './sectors/components/sector-edit/sector-edi
     SectorEditComponent,
   ]
 })
-export class FeatureModules { }
+export class ClusterModule { }

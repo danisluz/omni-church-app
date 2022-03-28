@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModules } from './core/core.module';
-import { FeatureModules } from './features/features.module';
+import { ClusterModule } from './cluster/cluster.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { HttpClientModule } from "@angular/common/http";
 
@@ -30,7 +30,7 @@ import { AuthModule } from './core/auth/auth.module';
     AppRoutingModule,
     CommonModule,
     CoreModules,
-    FeatureModules,
+    ClusterModule,
     BrowserAnimationsModule,
     DashboardModule,
     HttpClientModule,
