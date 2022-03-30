@@ -16,17 +16,19 @@
               Crie uma conta
             </a>
           </p>
-          <div class="form-floating mb-3">
-            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="E-mail">
-            <label class="form-label" for="usr">E-mail</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input formControlName="password" type="password" class="form-control" id="floatingInput" placeholder="Senha">
-            <label class="form-label" for="usr">Senha</label>
-          </div>
-          <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary">Entrar</button>
-          </div>
+          <form [formGroup]="loginForm" *ngIf="loginForm">
+            <div class="form-floating mb-3">
+              <input formControlName="userName" type="email" class="form-control" id="floatingInput" placeholder="E-mail">
+              <label class="form-label" for="usr">E-mail</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input formControlName="password" type="password" class="form-control" id="floatingInput" placeholder="Senha">
+              <label class="form-label" for="usr">Senha</label>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-primary">Entrar</button>
+            </div>
+          </form>
           <hr>
           <div class="row">
             <a class="redefine" href="#">
