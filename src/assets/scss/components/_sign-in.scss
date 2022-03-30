@@ -1,0 +1,75 @@
+@import '../vars';
+@import '../mixins';
+
+.sign-in {
+  background: url('https://source.unsplash.com/random/1920×1080/?nature, forest, night') no-repeat;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .text {
+      margin-right: 150px;
+      color: #ffffff;
+      .img {
+        padding: 0 0 10px 0;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  .login {
+    background: white;
+    width: 400px;
+    padding: 40px;
+    border-radius: 1%;
+    h1 {
+      color: $color-700;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    p.new-user {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: $color-700;
+    }
+    a {
+      text-decoration: none;
+    }
+    hr {
+      color: gray;
+    }
+    a.redefine {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: $color-700;
+    }
+  }
+
+  @media (min-width: 200px) {
+    .logo .text {
+      text-align: center;
+      margin: 0;
+    }
+  }
+  @media (min-width: 992px) {
+    .logo .text {
+      text-align: left;
+      margin-right: 150px;
+    }
+  }
+}

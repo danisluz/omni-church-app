@@ -1,24 +1,38 @@
-<div class="sign-in">
+<div class="sign-in box-shadow-sm container-fluid">
   <div class="container">
     <div class="row logo">
       <div class="col">
         <div class="text">
-          <img src="https://auth.services.adobe.com/img/generic/adobe_logo_white.svg" alt="">
-          <p>Sign in or create an account</p>
+          <img class="img" src="../assets/img/logo-sing-in.svg" alt="OmniChurch" width="200">
+          <p>Faça login ou crie uma conta</p>
         </div>
       </div>
       <div class="col">
         <div class="login">
-          <h1>Fazer Login</h1>
+          <h1 class="mb-3">Fazer Login</h1>
+          <p class="new-user">
+            Novo usuário?
+            <a href="#">
+              Crie uma conta
+            </a>
+          </p>
           <div class="form-floating mb-3">
-            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="Nome da igreja">
+            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="E-mail">
             <label class="form-label" for="usr">E-mail</label>
           </div>
           <div class="form-floating mb-3">
-            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="Nome da igreja">
+            <input formControlName="password" type="password" class="form-control" id="floatingInput" placeholder="Senha">
             <label class="form-label" for="usr">Senha</label>
           </div>
-          <button type="button" class="btn btn-primary">Primary</button>
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary">Entrar</button>
+          </div>
+          <hr>
+          <div class="row">
+            <a class="redefine" href="#">
+              Redefinir sua senha
+            </a>
+          </div>
         </div>
       </div>
     </div>

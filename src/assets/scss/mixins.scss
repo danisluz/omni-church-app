@@ -5,21 +5,21 @@
   flex-direction: $flex-direction;
 };
 
-@mixin btn-dark() {
+@mixin button-dark() {
   color: $color-200;
   &:hover {
     color: $color-900;
   }
 }
 
-@mixin btn-danger() {
+@mixin button-danger() {
   color: $color-danger;
   &:hover {
     color: $color-900;
   }
 }
 
-@mixin btn-light() {
+@mixin button-light() {
   color: $color-200;
   text-decoration: none;
   &:hover {
